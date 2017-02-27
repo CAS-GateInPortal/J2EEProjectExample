@@ -1,11 +1,17 @@
 package test;
 
 import java.io.IOException;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.jasig.cas.client.authentication.AttributePrincipal;
+import org.jasig.cas.client.validation.Cas10TicketValidationFilter;
 
 /**
  * Servlet implementation class Hello
@@ -27,8 +33,11 @@ public class Hello extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.getWriter().println("Hello World!");
+		AttributePrincipal principal = (AttributePrincipal)request.getUserPrincipal();
+		
+		String username = principal.getName();
+		//CAS server username 
+		response.getWriter().append("Username is: ").append(username);
 	}
 
 	/**

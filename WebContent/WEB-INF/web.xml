@@ -19,7 +19,7 @@
         <filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
         <init-param>
             <param-name>casServerLoginUrl</param-name>
-            <param-value>http://localhost:8086/cas-server/login</param-value>
+            <param-value>http://218.206.179.173:8080/ots-sso/login</param-value>
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
@@ -38,7 +38,7 @@
         </filter-class>
         <init-param>
             <param-name>casServerUrlPrefix</param-name>
-            <param-value>http://localhost:8086/cas-server</param-value>
+            <param-value>http://218.206.179.173:8080/ots-sso</param-value>
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
